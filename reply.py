@@ -22,7 +22,7 @@ class Length():
         self.Calculate_ALLCorpus()
 
     def readline_hash(self):
-        with open(r'D:\test111\PS2CPC-Launcher\en_us copy.txt', encoding='utf-8') as f:
+        with open(r'D:\test111\PS2CPC-Launcher\en_us copy.txt', encoding='utf-8') as f:#此处的路径为绝对路径，请自行修改
             lines = f.readlines()
         step = len(lines)
         Hash_str = []
@@ -34,7 +34,7 @@ class Length():
         return Hash_str
     
     def readline_string(self):
-        with open(r'D:\test111\PS2CPC-Launcher\en_us copy.txt', encoding='utf-8') as f:
+        with open(r'D:\test111\PS2CPC-Launcher\en_us copy.txt', encoding='utf-8') as f:#此处的路径为绝对路径，请自行修改
             lines = f.readlines()
         step = len(lines)
         Corpus = []
@@ -119,7 +119,7 @@ class Generate(Length):
         Generate_dir = []
         step = len(hash)
         for i in range(0, step):
-            Out_str = str(hash[i]) + str(' ') + str(link_lenth[i]) + str(' ') + str(corpus_lenth[i]) + str(' d\n')
+            Out_str = str(hash[i]) + str('	') + str(link_lenth[i]) + str('	') + str(corpus_lenth[i]) + str('	d\n')
             Generate_dir.append(Out_str)
         
         return Generate_dir
@@ -139,7 +139,7 @@ class main(Generate,Length):
         f.write(str(text))
         f.close 
         for i in range(0,step):
-            f = open("test1.txt","a")
+            f = open("test1.txt","a")#此处会在文件所在目录自动生成test1.txt文件
             f.write(dir[i])
             f.close 
         print('完成')
